@@ -8,8 +8,8 @@
 */
 
 #define DR_OPTIX_SYM(...) __VA_ARGS__ = nullptr;
-#define DR_OPTIX_ABI_VERSION 55
-#define DR_OPTIX_FUNCTION_TABLE_SIZE 43
+#define DR_OPTIX_ABI_VERSION 84
+#define DR_OPTIX_FUNCTION_TABLE_SIZE 48
 
 #include "optix.h"
 #include "optix_api.h"
@@ -61,9 +61,14 @@ static const char *jitc_optix_table_names[DR_OPTIX_FUNCTION_TABLE_SIZE] = {
     "optixAccelCheckRelocationCompatibility",
     "optixAccelRelocate",
     "optixAccelCompact",
+    "optixAccelEmitProperty",
     "optixConvertPointerToTraversableHandle",
-    "reserved1",
-    "reserved2",
+    "optixOpacityMicromapArrayComputeMemoryUsage",
+    "optixOpacityMicromapArrayBuild",
+    "optixOpacityMicromapArrayGetRelocationInfo",
+    "optixOpacityMicromapArrayRelocate",
+    "optixDisplacementMicromapArrayComputeMemoryUsage",
+    "optixDisplacementMicromapArrayBuild",
     "optixSbtRecordPackHeader",
     "optixLaunch",
     "optixDenoiserCreate",
