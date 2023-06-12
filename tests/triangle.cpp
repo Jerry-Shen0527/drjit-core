@@ -138,7 +138,7 @@ void demo() {
     size_t log_size = sizeof(log);
 
     OptixModule mod;
-    int rv = optixModuleCreateFromPTX(
+    int rv = optixModuleCreate(
         context, &module_compile_options, &pipeline_compile_options,
         miss_and_closesthit_ptx, strlen(miss_and_closesthit_ptx), log,
         &log_size, &mod);

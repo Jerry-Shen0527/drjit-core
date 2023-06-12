@@ -43,8 +43,8 @@ static const char *jitc_optix_table_names[DR_OPTIX_FUNCTION_TABLE_SIZE] = {
     "optixDeviceContextGetCacheEnabled",
     "optixDeviceContextGetCacheLocation",
     "optixDeviceContextGetCacheDatabaseSizes",
-    "optixModuleCreateFromPTX",
-    "optixModuleCreateFromPTXWithTasks",
+    "optixModuleCreate",
+    "optixModuleCreateWithTasks",
     "optixModuleGetCompilationState",
     "optixModuleDestroy",
     "optixBuiltinISModuleGet",
@@ -162,8 +162,8 @@ bool jitc_optix_api_init() {
     LOAD(optixDeviceContextDestroy);
     LOAD(optixDeviceContextSetCacheEnabled);
     LOAD(optixDeviceContextSetCacheLocation);
-    LOAD(optixModuleCreateFromPTX);
-    LOAD(optixModuleCreateFromPTXWithTasks);
+    LOAD(optixModuleCreate);
+    LOAD(optixModuleCreateWithTasks);
     LOAD(optixModuleGetCompilationState);
     LOAD(optixModuleDestroy);
     LOAD(optixTaskExecute);
@@ -202,7 +202,7 @@ void jitc_optix_api_shutdown() {
     #define Z(x) x = nullptr
     Z(optixGetErrorName); Z(optixGetErrorString); Z(optixDeviceContextCreate);
     Z(optixDeviceContextDestroy); Z(optixDeviceContextSetCacheEnabled);
-    Z(optixDeviceContextSetCacheLocation); Z(optixModuleCreateFromPTX);
+    Z(optixDeviceContextSetCacheLocation); Z(optixModuleCreate);
     Z(optixModuleDestroy); Z(optixProgramGroupCreate);
     Z(optixProgramGroupDestroy); Z(optixPipelineCreate);
     Z(optixPipelineDestroy); Z(optixLaunch); Z(optixSbtRecordPackHeader);
